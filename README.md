@@ -81,10 +81,10 @@ Dot::set($input, 'spouse.name.last', 'Bell');
 ### API
 > **Dot** has a very small API, only two methods actually.
 
-#### Dot::get($arr, $key, $default = null)
+#### `Dot::get($arr, $key, $default = null)`
 > Returns the value found in $arr by $key or $default provided
 
-#### Dot::set(array &$arr, $key, $value)
+#### `Dot::set(array &$arr, $key, $value)`
 > Mutates the $arr by adding a new $key with $value provided
 
 ### Contribute
