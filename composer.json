@@ -1,0 +1,19 @@
+{
+    "name": "selvinortiz/dot",
+    "description": "Simplified array dot notation for PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Selvin Ortiz",
+            "email": "selvin@selvin.co"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-0": {
+            "SelvinOrtiz\\Dot": "src"
+        }
+    }
+}
