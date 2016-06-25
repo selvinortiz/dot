@@ -58,8 +58,8 @@ Dot::get($input, 'spouse');
 */
 
 Dot::set($input, 'spouse.name.last', 'Bell');
-/*
-$input = [
+/* $input will be mutated
+[
     'name' => [
         'first' => 'Brad',
         'last'  => 'Bell',
@@ -84,7 +84,7 @@ $input = [
 #### Dot::get($arr, $key, $default = null)
 > Returns the value found in $arr by $key or $default provided
 
-#### Dot::set($arr, $key, $value)
+#### Dot::set(array &$arr, $key, $value)
 > Mutates the $arr by adding a new $key with $value provided
 
 ### Contribute
