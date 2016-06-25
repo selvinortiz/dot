@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/selvinortiz/dot/v/stable.png)](https://packagist.org/packages/selvinortiz/dot)
 
 ### Description
->**Dot** a tiny library and implements array _dot notation_ for PHP written by [Selvin Ortiz](https://selvinortiz.com)
+>**Dot** is a tiny library and implements array _dot notation_ for PHP written by [Selvin Ortiz](https://selvinortiz.com)
 
 ### Requirements
 - PHP 5.4+
