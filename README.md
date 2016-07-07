@@ -22,7 +22,7 @@ sh spec.sh
 ```
 
 ### Usage
-> **Dot** can be called _statically_ and will take an array as input and return either a value by key or an array
+> To use **Dot** after proper installation, just _autoload_ it, _use_ it, and call methods on it:)
 
 ```php
 $input = [
@@ -42,6 +42,12 @@ $input = [
     'age'  => 25,
 ];
 
+Dot::has($input, 'spouse');
+// true
+
+Dot::has($input, 'mistress.relationship');
+// false
+
 Dot::get($input, 'spouse.name.last');
 // 'Kelly'
 
@@ -58,7 +64,7 @@ Dot::get($input, 'spouse');
 */
 
 Dot::set($input, 'spouse.name.last', 'Bell');
-/* $input will be mutated
+/* $input will be mutated with a changed value
 [
     'name' => [
         'first' => 'Brad',
@@ -67,9 +73,28 @@ Dot::set($input, 'spouse.name.last', 'Bell');
     'spouse' => [
         'name' => [
             'first' => 'Brandon',
-            'last'  => 'Bell' // < Changed
+            'last'  => 'Bell'
         ],
         'mood' => 'Happy',
+        'age'  => '75',
+    ],
+    'mood' => 'Angry',
+    'age'  => 25,
+];
+*/
+
+Dot::delete($input, 'spouse.mood');
+/* $input will be mutated with a key/value deleted
+[
+    'name' => [
+        'first' => 'Brad',
+        'last'  => 'Bell',
+    ],
+    'spouse' => [
+        'name' => [
+            'first' => 'Brandon',
+            'last'  => 'Bell'
+        ]
         'age'  => '75',
     ],
     'mood' => 'Angry',
@@ -79,19 +104,25 @@ Dot::set($input, 'spouse.name.last', 'Bell');
 ```
 
 ### API
-> **Dot** has a very small API, only two methods actually.
+> **Dot** has a very small API and hoping to keep it small and to the point.
+
+#### `Dot::has($arr, $key)`
+> Returns whether or not `$arr` has `$key`. Put another way, `$key` exists in `$arr`
 
 #### `Dot::get($arr, $key, $default = null)`
-> Returns the value found in $arr by $key or $default provided
+> Returns the value found in `$arr` by `$key` or `$default` provided
 
 #### `Dot::set(array &$arr, $key, $value)`
-> Mutates the $arr by adding a new $key with $value provided
+> Mutates the `$arr` by adding a new `$key` with `$value` provided
+
+#### `Dot::delete(array &$arr, $key)`
+> Mutates the `$arr` by delete `$key` and its associated value if found
 
 ### Contribute
 > **Dot** wants to be friendly to _first time contributors_. Just follow the steps below and if you have questions along the way, please reach out.
 
 1. Fork it!
-1. Create your bugfix or feature branch
+1. Create your `bugfix` or `feature` branch
 1. Commit and push your changes
 1. Submit a pull request
 

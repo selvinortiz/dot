@@ -2,3 +2,4 @@
 .temp
 .DS_Store
 vendor
+spec/coverage

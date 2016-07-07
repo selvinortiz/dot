@@ -9,6 +9,31 @@ namespace SelvinOrtiz\Dot;
 class Dot
 {
     /**
+     * Returns whether or not the $key exists within $arr
+     *
+     * @param array  $arr
+     * @param string $key
+     *
+     * @return bool
+     */
+    public static function has($arr, $key)
+    {
+        if (strpos($key, '.') !== false && count(($keys = explode('.', $key)))) {
+            foreach ($keys as $key) {
+                if (!array_key_exists($key, $arr)) {
+                    return false;
+                }
+
+                $arr = $arr[$key];
+            }
+
+            return true;
+        }
+
+        return array_key_exists($key, $arr);
+    }
+
+    /**
      * Returns he value of $key if found in $arr or $default
      *
      * @param array       $arr
@@ -36,7 +61,8 @@ class Dot
 
     /**
      * Sets the $value identified by $key inside $arr
-     * @param array  $arr
+     *
+     * @param array  &$arr
      * @param string $key
      * @param mixed  $value
      */
@@ -56,6 +82,25 @@ class Dot
             $arr[array_shift($keys)] = $value;
         } else {
             $arr[$key] = $value;
+        }
+    }
+
+    /**
+     * Deletes a $key and its value from the $arr
+     *
+     * @param  array &$arr
+     * @param string $key
+     */
+    public static function delete(array &$arr, $key)
+    {
+        if (strpos($key, '.') !== false && ($keys = explode('.', $key)) && count($keys)) {
+            while (count($keys) > 1) {
+                $arr = &$arr[array_shift($keys)];
+            }
+
+            unset($arr[array_shift($keys)]);
+        } else {
+            unset($arr[$key]);
         }
     }
 }
