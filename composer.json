@@ -9,11 +9,12 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "^4.8"
+        "php": "^7.1",
+        "phpunit/phpunit": "^7.0"
     },
     "autoload": {
-        "psr-0": {
-            "SelvinOrtiz\\Dot": "src"
+        "psr-4": {
+            "SelvinOrtiz\\Dot\\": "src/SelvinOrtiz/Dot"
         }
     }
 }
