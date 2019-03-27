@@ -103,4 +103,25 @@ class Dot
             unset($arr[$key]);
         }
     }
+    
+    /**
+     * Converted a multi-dimensional associative array with `dot`.
+     *
+     * @param array $arrays
+     *
+     * @return array
+     */
+    public static function dot(array $arrays)
+    {
+        $results = [];
+        foreach ($arrays as $key => $value) {
+            if (is_array($value)) {
+                $results = array_merge($results, self::dot($value, $key.'.'));
+            } else {
+                $results[$key] = $value;
+            }
+        }
+
+        return $results;
+    }
 }
