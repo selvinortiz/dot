@@ -8,7 +8,7 @@
 >**Dot** is a tiny library and implements array _dot notation_ for PHP written by [Selvin Ortiz](https://selvinortiz.com)
 
 ### Requirements
-- PHP 5.4+
+- PHP 7.1+
 - [Composer](http://getcomposer.org) and [selvinortiz/dot](https://packagist.org/packages/selvinortiz/dot)
 
 ### Install

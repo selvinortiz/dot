@@ -1,11 +1,12 @@
 <?php
 
 use SelvinOrtiz\Dot\Dot;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class DotTest
  */
-class DotTest extends PHPUnit_Framework_TestCase
+class DotTest extends TestCase
 {
     public function test_has()
     {
